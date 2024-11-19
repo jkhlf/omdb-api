@@ -2,7 +2,6 @@ package br.khlf.moviesapi;
 
 import br.khlf.moviesapi.principal.Principal;
 import br.khlf.moviesapi.repository.SerieRepository;
-import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
