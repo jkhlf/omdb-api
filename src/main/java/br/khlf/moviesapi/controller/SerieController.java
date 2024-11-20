@@ -1,5 +1,6 @@
 package br.khlf.moviesapi.controller;
 
+import br.khlf.moviesapi.dto.EpisodioDTO;
 import br.khlf.moviesapi.dto.SerieDTO;
 import br.khlf.moviesapi.service.SerieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,20 @@ public class SerieController {
     @GetMapping("/{id}")
     public SerieDTO getById(@PathVariable Long id){
         return service.getById(id);
+    }
+
+    @GetMapping("/{id}/temporadas/todas")
+    public  List<EpisodioDTO> getTemp (@PathVariable Long id) {
+    return service.getTemp(id);
+    }
+
+    @GetMapping("/{id}/temporadas/{index}")
+    public  List<EpisodioDTO> getTempIndex (@PathVariable Long id, @PathVariable Long index) {
+        return service.getTempIndex(id, index);
+    }
+
+    @GetMapping("/categoria/{nomeGenero}")
+    public List<SerieDTO> getCategoria(@PathVariable String nomeGenero){
+        return service.getCategoria(nomeGenero);
     }
 }
